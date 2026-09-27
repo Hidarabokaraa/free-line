@@ -454,8 +454,8 @@
       if (active) {
         var p = routes[active].path, L = p.getTotalLength();
         moverT = still ? .55 : (moverT + dt / 3.2) % 1;
-        var a = p.getPointAtLength(moverT * L), b = p.getPointAtLength(Math.min(L, moverT * L + 2));
-        var ang = Math.atan2(b.y - a.y, b.x - a.x) / D2R;
+        var a = p.getPointAtLength(moverT * L), a0 = p.getPointAtLength(Math.max(0, moverT * L - 2)), b = p.getPointAtLength(Math.min(L, moverT * L + 2));
+        var ang = Math.atan2(b.y - a0.y, b.x - a0.x) / D2R;
         var s = vb.w / 1300 * 1.9 + .6;
         mover.setAttribute('transform', 'translate(' + a.x.toFixed(1) + ' ' + a.y.toFixed(1) + ') rotate(' + ang.toFixed(1) + ') scale(' + s.toFixed(2) + ')');
       }

@@ -590,9 +590,11 @@
     var L = fill.getTotalLength();
     function place(p) {
       fill.style.strokeDashoffset = (1 - p).toFixed(4);
-      var pt = fill.getPointAtLength(p * L), pt2 = fill.getPointAtLength(Math.min(L, p * L + 1));
+      var pt = fill.getPointAtLength(p * L);
+      /* tangent from a point behind to a point ahead, so it never collapses at the ends */
+      var pa = fill.getPointAtLength(Math.max(0, p * L - 2)), pt2 = fill.getPointAtLength(Math.min(L, p * L + 2));
       var w = journey.clientWidth / 1200, h = journey.clientHeight / 160;
-      var ang = Math.atan2((pt2.y - pt.y) * h, (pt2.x - pt.x) * w) * 180 / Math.PI;
+      var ang = Math.atan2((pt2.y - pa.y) * h, (pt2.x - pa.x) * w) * 180 / Math.PI;
       /* truck art faces left; flip the angle frame so it drives along the path */
       truck.style.transform = 'translate(' + (pt.x * w).toFixed(1) + 'px,' + (pt.y * h).toFixed(1) + 'px) rotate(' + (ang + 180).toFixed(1) + 'deg)';
       stations.forEach(function (s, i) { s.classList.toggle('is-on', p >= i / 3 - .02); });
