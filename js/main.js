@@ -122,9 +122,11 @@
   }
 
   /* ---------- Load choreography ---------- */
-  window.requestAnimationFrame(function () {
-    document.documentElement.classList.add('is-loaded');
-  });
+  /* rAF is paused in background tabs, so a timer backs it up — the hero
+     must never stay invisible */
+  function markLoaded() { document.documentElement.classList.add('is-loaded'); }
+  window.requestAnimationFrame(markLoaded);
+  window.setTimeout(markLoaded, 120);
 
   /* ---------- Hero depth: pointer + scroll parallax ---------- */
   var finePointer = window.matchMedia('(pointer: fine) and (min-width: 1081px)');
