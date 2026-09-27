@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>فري لاين | شحن وتخليص جمركي إلى سوريا</title>
 <meta name="description" content="شركة فري لاين للشحن والتخليص الجمركي — شحن بري وجوي وبحري، جزئي وحاويات كاملة، من تركيا والإمارات والصين ودول الخليج وأوروبا إلى سوريا، مع تخليص جمركي وتوصيل من الباب للباب.">
-<meta name="theme-color" content="#072E1E">
+<meta name="theme-color" content="#06291B">
 <meta name="color-scheme" content="light">
 <meta name="darkreader-lock">
 <link rel="icon" type="image/png" href="images/favicon.png">
@@ -21,9 +21,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>
+  document.documentElement.classList.add('js');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+</script>
 
 <script type="application/ld+json">
 {
@@ -40,7 +44,7 @@
 </head>
 <body>
 
-<!-- Icon sprite -->
+<!-- ================= Icon sprite ================= -->
 <svg class="sprite" aria-hidden="true" focusable="false">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5s-.5-1.3-.7-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7a10 10 0 0 0 3.9 3.5c.5.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></symbol>
   <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></g></symbol>
@@ -55,15 +59,34 @@
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.4 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2z"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-drag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M5 12h14"/></g></symbol>
 </svg>
 
-<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+<!-- ================= Preloader ================= -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-panel preloader-panel-a"></div>
+  <div class="preloader-panel preloader-panel-b"></div>
+  <div class="preloader-inner">
+    <span class="preloader-tile"><img src="images/emblem.webp" alt="" width="72" height="72"></span>
+    <div class="preloader-name">فري لاين</div>
+    <div class="preloader-track">
+      <span class="preloader-bar"></span>
+      <svg class="preloader-plane"><use href="#i-plane"/></svg>
+    </div>
+    <div class="preloader-count"><span id="preCount">0</span>%</div>
+  </div>
+</div>
 
-<!-- ===== Header ===== -->
+<a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+<div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+
+<!-- ================= Header ================= -->
 <header class="header" id="header">
+  <span class="scroll-progress" id="scrollProgress" aria-hidden="true"></span>
   <div class="container header-inner">
     <a href="#top" class="brand" aria-label="فري لاين — الصفحة الرئيسية">
-      <img class="brand-mark" src="images/emblem.webp" alt="" width="48" height="48">
+      <span class="brand-tile"><img class="brand-mark" src="images/emblem.webp" alt="" width="40" height="40"></span>
       <span class="brand-text">
         <span class="brand-name">فري لاين</span>
         <span class="brand-latin" lang="en" dir="ltr">FREE LINE</span>
@@ -80,8 +103,8 @@
     </nav>
 
     <div class="header-actions">
-      <a class="btn btn-gold header-quote" href="#quote">اطلب عرض سعر</a>
-      <a class="icon-btn icon-btn-wa js-whatsapp" href="#" aria-label="تواصل عبر واتساب">
+      <a class="btn btn-gold header-quote magnetic" href="#quote">اطلب عرض سعر</a>
+      <a class="icon-btn icon-btn-wa js-whatsapp magnetic" href="#" aria-label="تواصل عبر واتساب">
         <svg aria-hidden="true"><use href="#i-wa"/></svg>
       </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav">
@@ -93,472 +116,506 @@
 
 <main id="main">
 
-<!-- ===== Hero ===== -->
-<section class="hero" id="top">
+<!-- ================= Hero ================= -->
+<section class="hero" id="top" aria-labelledby="heroTitle">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-glow hero-glow-a"></div>
+    <div class="hero-glow hero-glow-b"></div>
+    <div class="hero-grain"></div>
+  </div>
+
   <div class="container hero-inner">
-    <div class="hero-content" data-depth="4">
-      <p class="hero-kicker">شحن وتخليص جمركي من الباب للباب</p>
-      <h1>بضاعتك من أسواق العالم إلى سوريا، بخط واحد ومسؤولية واحدة</h1>
-      <p class="hero-sub">نستلم من المورّد في تركيا أو الإمارات أو الصين أو الخليج أو أوروبا، نشحن براً أو جواً أو بحراً، نخلّص جمركياً، ونسلّم إلى عنوانك في أي محافظة.</p>
-      <div class="hero-actions">
-        <a class="btn btn-wa btn-lg js-whatsapp" href="#">
+    <div class="hero-copy" data-depth="4">
+      <p class="hero-kicker" data-anim="fade-up"><span class="kicker-line"></span>شحن وتخليص جمركي من الباب للباب</p>
+      <h1 id="heroTitle" class="hero-title" data-split>بضاعتك من أسواق العالم إلى باب مستودعك في سوريا</h1>
+      <p class="hero-sub" data-anim="fade-up">نستلم من المورّد في تركيا والإمارات والصين والخليج وأوروبا، نشحن براً وجواً وبحراً، نخلّص جمركياً، ونسلّم إلى عنوانك في أي محافظة.</p>
+      <div class="hero-actions" data-anim="fade-up">
+        <a class="btn btn-wa btn-lg js-whatsapp magnetic" href="#">
           <svg aria-hidden="true"><use href="#i-wa"/></svg>
           تواصل عبر واتساب
         </a>
-        <a class="btn btn-ghost btn-lg" href="#quote">اطلب عرض سعر</a>
+        <a class="btn btn-ghost btn-lg magnetic" href="#quote">
+          اطلب عرض سعر
+          <svg class="btn-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
       </div>
-      <dl class="hero-facts">
-        <div><dt>سنوات الخبرة</dt><dd>+10</dd></div>
-        <div><dt>شحنة مُسلَّمة</dt><dd>+5000</dd></div>
-        <div><dt>مناطق شحن</dt><dd>5</dd></div>
-        <div><dt>متابعة ودعم</dt><dd>24/7</dd></div>
-      </dl>
     </div>
 
-    <figure class="route-map" data-depth="2" aria-labelledby="mapCaption">
-      <svg class="map-svg" viewBox="0 0 640 440" role="img" aria-labelledby="mapTitle">
-        <title id="mapTitle">خريطة خطوط الشحن من أوروبا وتركيا والصين والخليج والإمارات إلى سوريا</title>
-        <defs>
-          <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.1" fill="currentColor"/>
-          </pattern>
-          <!-- top-view cargo plane, nose at +x -->
-          <g id="m-plane">
-            <path d="M11 0 C11 -1.4 9.5 -2 7 -2 L2.5 -2 L-3.5 -10 L-6.5 -10 L-3 -2 L-8 -2 L-10.5 -5.5 L-12.5 -5.5 L-11 0 L-12.5 5.5 L-10.5 5.5 L-8 2 L-3 2 L-6.5 10 L-3.5 10 L2.5 2 L7 2 C9.5 2 11 1.4 11 0 Z"/>
-          </g>
-          <!-- shipping container seen from above, long side along x -->
-          <g id="m-box">
-            <rect x="-8" y="-5" width="16" height="10" rx="1.2"/>
-            <path d="M-4 -5V5M0 -5V5M4 -5V5"/>
-          </g>
-          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0" stop-color="#E0BC6A" stop-opacity=".45"/>
-            <stop offset="1" stop-color="#E0BC6A" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
+    <div class="hero-visual" data-depth="2">
+      <div class="globe-wrap" id="globeWrap">
+        <canvas class="globe-canvas" id="globe" role="img" aria-label="كرة أرضية تُظهر خطوط الشحن من أوروبا وتركيا والإمارات والخليج والصين إلى سوريا"></canvas>
+        <p class="globe-hint" aria-hidden="true"><svg><use href="#i-drag"/></svg>اسحب لتدوير الكرة</p>
+      </div>
 
-        <g class="map-grid">
-          <rect width="640" height="440" fill="url(#dots)"/>
-          <path d="M0 110H640M0 220H640M0 330H640M160 0V440M320 0V440M480 0V440"/>
-        </g>
-
-        <!-- routes: origin → Syria (290,215) -->
-        <g class="routes">
-          <path class="route" pathLength="1" id="r-eu" d="M62 78 C 150 70, 250 120, 290 215"/>
-          <path class="route" pathLength="1" id="r-tr" d="M214 136 C 240 150, 270 175, 290 215"/>
-          <path class="route" pathLength="1" id="r-cn" d="M590 250 C 520 120, 380 120, 290 215"/>
-          <path class="route" pathLength="1" id="r-ae" d="M462 300 C 420 230, 350 200, 290 215"/>
-          <path class="route" pathLength="1" id="r-gulf" d="M378 330 C 360 290, 320 250, 290 215"/>
-        </g>
-
-        <!-- movers: planes on air lanes, containers on land/sea lanes.
-             Glyphs point along +x so rotate="auto" follows the route. -->
-        <g class="movers" aria-hidden="true">
-          <g class="mover mover-plane"><use href="#m-plane"/><animateMotion dur="7s" begin="1.6s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1"><mpath href="#r-eu"/></animateMotion></g>
-          <g class="mover mover-box"><use href="#m-box"/><animateMotion dur="5s" begin="1.8s" repeatCount="indefinite" rotate="auto"><mpath href="#r-tr"/></animateMotion></g>
-          <g class="mover mover-plane"><use href="#m-plane"/><animateMotion dur="8s" begin="2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .55 1"><mpath href="#r-cn"/></animateMotion></g>
-          <g class="mover mover-box"><use href="#m-box"/><animateMotion dur="7s" begin="2.2s" repeatCount="indefinite" rotate="auto"><mpath href="#r-ae"/></animateMotion></g>
-          <g class="mover mover-box"><use href="#m-box"/><animateMotion dur="6s" begin="2.4s" repeatCount="indefinite" rotate="auto"><mpath href="#r-gulf"/></animateMotion></g>
-        </g>
-
-        <g class="origins">
-          <g class="origin" transform="translate(62 78)"><circle r="6"/><text x="12" y="-10">أوروبا</text></g>
-          <g class="origin" transform="translate(214 136)"><circle r="6"/><text x="12" y="-8">تركيا</text></g>
-          <g class="origin" transform="translate(590 250)"><circle r="6"/><text x="10" y="28">الصين</text></g>
-          <g class="origin" transform="translate(462 300)"><circle r="6"/><text x="-12" y="30">الإمارات</text></g>
-          <g class="origin" transform="translate(378 330)"><circle r="6"/><text x="12" y="30">الخليج</text></g>
-        </g>
-
-        <g class="dest" transform="translate(290 215)">
-          <circle class="dest-glow" r="46" fill="url(#glow)"/>
-          <circle class="dest-ring" r="14"/>
-          <circle class="dest-core" r="7"/>
-          <text x="-22" y="6">سوريا</text>
-        </g>
-      </svg>
-      <figcaption id="mapCaption">خطوط منتظمة من خمس مناطق تجارية إلى جميع المحافظات السورية</figcaption>
-    </figure>
+      <aside class="track-card" data-depth="5" aria-label="مثال على تحديثات التتبع">
+        <div class="track-head">
+          <span class="track-live"><i></i>مثال على تحديثات التتبع</span>
+          <svg class="track-mode" aria-hidden="true"><use href="#i-truck" id="trackModeUse"/></svg>
+        </div>
+        <div class="track-route">
+          <span class="track-from" id="trackFrom">إسطنبول</span>
+          <span class="track-line"><span class="track-fill" id="trackFill"></span><span class="track-dot" id="trackDot"></span></span>
+          <span class="track-to">دمشق</span>
+        </div>
+        <div class="track-meta">
+          <span id="trackStatus">في الطريق — تحديث على واتساب</span>
+          <span id="trackEta">5–10 أيام</span>
+        </div>
+      </aside>
+    </div>
   </div>
 
-  <!-- Motion scene: port crane → truck on the road → warehouse, cargo plane overhead.
-       Everything faces left: the direction of reading and of delivery. -->
-  <div class="cargo-scene" data-depth="5" aria-hidden="true">
-    <svg viewBox="0 0 1440 190" preserveAspectRatio="xMidYMax slice">
-      <defs>
-        <linearGradient id="trail" x1="0" x2="1" y1="0" y2="0">
-          <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
-          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <clipPath id="craneClip"><rect x="1100" y="44" width="340" height="146"/></clipPath>
-        <g id="sc-container">
-          <rect width="120" height="44" rx="2"/>
-          <path class="ribs" d="M12 5V39M24 5V39M36 5V39M48 5V39M60 5V39M72 5V39M84 5V39M96 5V39M108 5V39"/>
-        </g>
-      </defs>
+  <a class="scroll-cue" href="#services" aria-label="انتقل إلى الخدمات">
+    <span class="scroll-cue-mouse"><i></i></span>
+  </a>
+</section>
 
-      <!-- warehouse (destination) -->
-      <g class="sc-line sc-warehouse">
-        <path d="M40 176V112L160 80L280 112V176"/>
-        <path d="M96 176V132H224V176"/>
-        <path d="M96 144H224M96 156H224M96 168H224"/>
-      </g>
+<!-- ================= Marquee ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-group">
+      <span>إسطنبول</span><svg><use href="#i-plane"/></svg>
+      <span>مرسين</span><svg><use href="#i-ship"/></svg>
+      <span>دبي</span><svg><use href="#i-truck"/></svg>
+      <span>الشارقة</span><svg><use href="#i-container"/></svg>
+      <span>الصين</span><svg><use href="#i-ship"/></svg>
+      <span>السعودية</span><svg><use href="#i-truck"/></svg>
+      <span>الكويت</span><svg><use href="#i-plane"/></svg>
+      <span>أوروبا</span><svg><use href="#i-ship"/></svg>
+      <span class="marquee-dest">سوريا</span><svg><use href="#i-stamp"/></svg>
+    </div>
+  </div>
+</div>
 
-      <!-- road -->
-      <path class="sc-ground" d="M0 176H1440"/>
-      <path class="sc-road" d="M0 186H1440"/>
+<!-- ================= Services (horizontal) ================= -->
+<section class="services" id="services" aria-labelledby="servicesTitle">
+  <div class="services-pin">
+    <div class="services-intro container">
+      <h2 id="servicesTitle" class="section-title" data-split>ست طرق لتصل بضاعتك، ومسؤولية واحدة</h2>
+      <p class="services-lead" data-anim="fade-up">اختر ما يناسب الكمية والموعد والميزانية، ونتولى نحن باقي التفاصيل.</p>
+      <div class="services-progress" aria-hidden="true"><span id="servicesBar"></span></div>
+    </div>
 
-      <!-- container stacks (origin port) -->
-      <g class="sc-stack">
-        <use href="#sc-container" x="1300" y="132" class="c-gold"/>
-        <use href="#sc-container" x="1300" y="88" class="c-light"/>
-        <use href="#sc-container" x="1180" y="132" class="c-forest"/>
-      </g>
+    <div class="services-viewport">
+      <div class="services-track" id="servicesTrack">
 
-      <!-- crane -->
-      <g class="sc-line sc-crane">
-        <path d="M1390 176V30M1414 176V30M1390 30H1414"/>
-        <path d="M1390 176L1414 150L1390 124L1414 98L1390 72L1414 46"/>
-        <path d="M1120 36H1430M1120 46H1430"/>
-        <path d="M1402 30L1360 4M1402 30L1440 12"/>
-      </g>
-      <g clip-path="url(#craneClip)">
-        <g class="sc-lift">
-          <path class="sc-cable" d="M1206 -40V94M1226 -40V94"/>
-          <use href="#sc-container" x="1156" y="94" class="c-gold"/>
-        </g>
-      </g>
-      <rect class="sc-trolley" x="1196" y="40" width="40" height="10" rx="2"/>
+        <article class="svc">
+          <div class="svc-art">
+            <svg class="art art-land" viewBox="0 0 320 200" aria-hidden="true">
+              <path class="art-hill art-hill-b" d="M-40 140 Q 40 90 120 130 T 280 120 T 420 130 V200 H-40Z"/>
+              <path class="art-hill art-hill-a" d="M-40 150 Q 60 115 160 145 T 380 140 V200 H-40Z"/>
+              <rect class="art-road" x="0" y="160" width="320" height="40"/>
+              <path class="art-road-dash" d="M-40 180 H400"/>
+              <g class="art-truck">
+                <g class="art-truck-body">
+                  <rect class="c-gold" x="120" y="112" width="110" height="40" rx="3"/>
+                  <path class="art-ribs" d="M132 118v28M144 118v28M156 118v28M168 118v28M180 118v28M192 118v28M204 118v28M216 118v28"/>
+                  <path class="c-ivory" d="M88 152v-22c0-8 5-14 13-14h17v36z"/>
+                  <path class="c-night" d="M94 136v-10c0-3 2-5 5-5h13v15z"/>
+                  <rect class="c-night" x="86" y="150" width="148" height="6" rx="2"/>
+                </g>
+                <g class="art-wheel" transform="translate(104 160)"><g class="spin"><circle r="9"/><path d="M-5 0H5M0 -5V5"/></g></g>
+                <g class="art-wheel" transform="translate(200 160)"><g class="spin"><circle r="9"/><path d="M-5 0H5M0 -5V5"/></g></g>
+                <g class="art-wheel" transform="translate(220 160)"><g class="spin"><circle r="9"/><path d="M-5 0H5M0 -5V5"/></g></g>
+              </g>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <svg class="svc-icon" aria-hidden="true"><use href="#i-truck"/></svg>
+            <h3>الشحن البري</h3>
+            <p>خطوط برية منتظمة من تركيا ودول الجوار إلى جميع المحافظات السورية، بجداول ثابتة وأسعار تنافسية.</p>
+          </div>
+        </article>
 
-      <!-- truck with container -->
-      <g class="sc-truck">
-        <g class="sc-truck-body">
-          <rect class="sc-chassis" x="6" y="-20" width="206" height="6" rx="2"/>
-          <use href="#sc-container" x="48" y="-68" class="c-gold"/>
-          <rect class="c-forest-fill" x="170" y="-68" width="40" height="44" rx="2"/>
-          <path class="sc-cab" d="M4 -16V-44C4 -54 10 -60 20 -60H42V-16Z"/>
-          <path class="sc-window" d="M10 -52H34V-38H8C8 -46 8 -50 10 -52Z"/>
-          <rect class="sc-light" x="2" y="-26" width="5" height="5" rx="1"/>
-        </g>
-        <g transform="translate(24 -8)"><g class="sc-wheel"><circle r="10"/><path d="M-6 0H6M0 -6V6"/></g></g>
-        <g transform="translate(160 -8)"><g class="sc-wheel"><circle r="10"/><path d="M-6 0H6M0 -6V6"/></g></g>
-        <g transform="translate(186 -8)"><g class="sc-wheel"><circle r="10"/><path d="M-6 0H6M0 -6V6"/></g></g>
-      </g>
+        <article class="svc">
+          <div class="svc-art">
+            <svg class="art art-air" viewBox="0 0 320 200" aria-hidden="true">
+              <g class="art-clouds">
+                <path class="art-cloud" d="M30 60a14 14 0 0 1 26-6 11 11 0 0 1 18 9H22a8 8 0 0 1 8-3z"/>
+                <path class="art-cloud" d="M210 40a14 14 0 0 1 26-6 11 11 0 0 1 18 9h-52a8 8 0 0 1 8-3z"/>
+                <path class="art-cloud" d="M150 150a12 12 0 0 1 22-5 9 9 0 0 1 15 8h-44a7 7 0 0 1 7-3z"/>
+                <path class="art-cloud" d="M370 110a14 14 0 0 1 26-6 11 11 0 0 1 18 9h-52a8 8 0 0 1 8-3z"/>
+              </g>
+              <g class="art-plane">
+                <path class="art-trail" d="M232 102H330"/>
+                <path class="c-mute" d="M128 92L150 92L172 70L160 70Z"/>
+                <path class="c-ivory" d="M80 104C80 97 88 94 102 93L218 91L238 74H250L245 94L253 97V103C230 110 130 112 104 111C90 110 80 108 80 104Z"/>
+                <path class="c-gold" d="M238 74H250L245 94H230Z"/>
+                <path class="art-stripe" d="M104 105L240 101"/>
+                <path class="c-night" d="M88 99L97 96L101 99L91 101Z"/>
+                <path class="c-soft" d="M140 103H170L192 128H180Z"/>
+                <rect class="c-mute" x="152" y="110" width="22" height="8" rx="4"/>
+              </g>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <svg class="svc-icon" aria-hidden="true"><use href="#i-plane"/></svg>
+            <h3>الشحن الجوي</h3>
+            <p>للبضائع العاجلة والقيّمة، بحجوزات جوية مباشرة من الصين والإمارات وتركيا وتسليم خلال أيام.</p>
+          </div>
+        </article>
 
-      <!-- cargo plane -->
-      <g class="sc-plane">
-        <g class="sc-plane-body">
-          <path class="sc-trail" d="M214 30H520"/>
-          <path class="sc-wing-far" d="M96 24L128 24L152 6L140 6Z"/>
-          <path class="sc-fuselage" d="M0 32C0 24 9 20 26 19L172 17L196 0H212L205 21L214 25V31C188 39 60 41 24 40C9 39 0 37 0 32Z"/>
-          <path class="sc-fin" d="M196 0H212L205 21H186Z"/>
-          <path class="sc-stripe" d="M24 33L200 29"/>
-          <path class="sc-cockpit" d="M9 27L19 23.5L24 27.5L12 30Z"/>
-          <rect class="sc-door" x="58" y="21" width="30" height="13" rx="2"/>
-          <path class="sc-wing" d="M92 31H128L156 60H141Z"/>
-          <rect class="sc-engine" x="108" y="40" width="28" height="10" rx="5"/>
-          <path class="sc-tailplane" d="M186 24H206L218 33H207Z"/>
-        </g>
-      </g>
-    </svg>
+        <article class="svc">
+          <div class="svc-art">
+            <svg class="art art-sea" viewBox="0 0 320 200" aria-hidden="true">
+              <g class="art-ship">
+                <rect class="c-gold" x="104" y="78" width="36" height="20" rx="1"/>
+                <rect class="c-ivory" x="142" y="78" width="36" height="20" rx="1"/>
+                <rect class="c-forest" x="180" y="78" width="36" height="20" rx="1"/>
+                <rect class="c-forest" x="104" y="58" width="36" height="20" rx="1"/>
+                <rect class="c-gold" x="142" y="58" width="36" height="20" rx="1"/>
+                <path class="c-ivory" d="M226 98V60h14l4 10h8v28z"/>
+                <path class="c-night" d="M232 72h6v6h-6zM244 78h5v5h-5z"/>
+                <path class="c-hull" d="M70 98H262L246 132H92Z"/>
+                <path class="art-stripe" d="M82 110H254"/>
+              </g>
+              <g class="art-waves">
+                <path class="art-wave art-wave-a" d="M-160 132 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 V200 H-160Z"/>
+                <path class="art-wave art-wave-b" d="M-160 146 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 V200 H-160Z"/>
+              </g>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <svg class="svc-icon" aria-hidden="true"><use href="#i-ship"/></svg>
+            <h3>الشحن البحري</h3>
+            <p>الخيار الأوفر للكميات الكبيرة، عبر أهم الموانئ العالمية مع إدارة كاملة للمستندات حتى ميناء الوصول.</p>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-art">
+            <svg class="art art-lcl" viewBox="0 0 320 200" aria-hidden="true">
+              <path class="art-floor" d="M20 170H300"/>
+              <g class="art-lcl-box">
+                <path class="c-open" d="M70 90H250V168H70Z"/>
+                <path class="art-ribs art-ribs-light" d="M90 96v66M110 96v66M130 96v66M150 96v66M170 96v66M190 96v66M210 96v66M230 96v66"/>
+              </g>
+              <rect class="drop drop-1 c-gold" x="84" y="130" width="46" height="36" rx="2"/>
+              <rect class="drop drop-2 c-ivory" x="136" y="138" width="40" height="28" rx="2"/>
+              <rect class="drop drop-3 c-forest-l" x="182" y="124" width="54" height="42" rx="2"/>
+              <path class="art-dash" d="M70 72H250"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <svg class="svc-icon" aria-hidden="true"><use href="#i-box"/></svg>
+            <h3>الشحن الجزئي <span class="abbr" lang="en">LCL</span></h3>
+            <p>تدفع مقابل حجم بضاعتك فقط؛ نجمع شحنتك مع شحنات أخرى في حاوية واحدة لتوفير التكلفة.</p>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-art">
+            <svg class="art art-fcl" viewBox="0 0 320 200" aria-hidden="true">
+              <path class="art-floor" d="M20 170H300"/>
+              <rect class="c-gold" x="60" y="70" width="200" height="98" rx="3"/>
+              <path class="art-ribs" d="M80 78v82M100 78v82M120 78v82M140 78v82"/>
+              <g class="door door-a"><rect class="c-gold-d" x="160" y="70" width="50" height="98"/><path class="art-bar" d="M180 78v82M192 78v82"/></g>
+              <g class="door door-b"><rect class="c-gold-d" x="210" y="70" width="50" height="98"/><path class="art-bar" d="M228 78v82M240 78v82"/></g>
+              <g class="seal"><circle class="c-night" cx="210" cy="124" r="11"/><path class="seal-check" d="M204 124l4 4 8-8"/></g>
+              <text class="art-label" x="110" y="60" text-anchor="middle">40ft</text>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <svg class="svc-icon" aria-hidden="true"><use href="#i-container"/></svg>
+            <h3>الحاويات الكاملة <span class="abbr" lang="en">FCL</span></h3>
+            <p>حاوية 20 أو 40 قدماً لبضاعتك وحدك، بأفضل أسعار النوالين وإدارة كاملة من الميناء إلى المستودع.</p>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-art">
+            <svg class="art art-customs" viewBox="0 0 320 200" aria-hidden="true">
+              <g class="art-paper">
+                <rect class="c-ivory" x="96" y="24" width="128" height="160" rx="6"/>
+                <path class="art-lines" d="M114 50h92M114 66h70M114 82h84M114 98h60M114 150h40"/>
+              </g>
+              <g class="stamp-mark">
+                <circle class="stamp-ring" cx="186" cy="136" r="26"/>
+                <path class="stamp-check" d="M175 136l8 8 15-16"/>
+              </g>
+              <g class="stamp">
+                <rect class="c-gold" x="166" y="40" width="40" height="14" rx="3"/>
+                <rect class="c-night" x="178" y="4" width="16" height="38" rx="6"/>
+                <rect class="c-forest-l" x="170" y="54" width="32" height="8" rx="2"/>
+              </g>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <svg class="svc-icon" aria-hidden="true"><use href="#i-stamp"/></svg>
+            <h3>التخليص الجمركي</h3>
+            <p>فريق متخصص يتولى الإجراءات والمستندات والرسوم، لتصلك البضاعة مخلّصة وجاهزة دون تعقيد.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== Services ===== -->
-<section class="section" id="services" aria-labelledby="servicesTitle">
-  <div class="container">
-    <header class="section-head">
-      <h2 id="servicesTitle">كل ما تحتاجه شحنتك، من المورّد حتى باب مستودعك</h2>
-      <p>اختر طريقة الشحن حسب الكمية والوقت والميزانية، ونتولى نحن باقي التفاصيل.</p>
-    </header>
+<!-- ================= Numbers ================= -->
+<section class="numbers" aria-label="فري لاين بالأرقام">
+  <div class="container numbers-grid">
+    <div class="num"><span class="num-value" dir="ltr"><span>+</span><span data-count="10">10</span></span><span class="num-label">سنوات خبرة في الشحن إلى سوريا</span></div>
+    <div class="num"><span class="num-value" dir="ltr"><span>+</span><span data-count="5000">5000</span></span><span class="num-label">شحنة مُسلَّمة</span></div>
+    <div class="num"><span class="num-value" dir="ltr"><span data-count="5">5</span></span><span class="num-label">مناطق شحن رئيسية</span></div>
+    <div class="num"><span class="num-value" dir="ltr"><span data-count="24">24</span><span>/7</span></span><span class="num-label">متابعة ودعم</span></div>
+  </div>
+</section>
 
-    <div class="services">
-      <article class="service">
-        <svg class="service-icon" aria-hidden="true"><use href="#i-truck"/></svg>
-        <h3>الشحن البري</h3>
-        <p>خطوط برية منتظمة من تركيا ودول الجوار إلى جميع المحافظات السورية، بجداول ثابتة وأسعار تنافسية.</p>
-      </article>
-      <article class="service">
-        <svg class="service-icon" aria-hidden="true"><use href="#i-plane"/></svg>
-        <h3>الشحن الجوي</h3>
-        <p>للبضائع العاجلة والقيّمة، بحجوزات جوية مباشرة من الصين والإمارات وتركيا وتسليم خلال أيام.</p>
-      </article>
-      <article class="service">
-        <svg class="service-icon" aria-hidden="true"><use href="#i-ship"/></svg>
-        <h3>الشحن البحري</h3>
-        <p>الخيار الأوفر للكميات الكبيرة، عبر أهم الموانئ العالمية مع إدارة كاملة للمستندات حتى ميناء الوصول.</p>
-      </article>
-      <article class="service">
-        <svg class="service-icon" aria-hidden="true"><use href="#i-box"/></svg>
-        <h3>الشحن الجزئي <span class="abbr" lang="en">LCL</span></h3>
-        <p>تدفع مقابل حجم بضاعتك فقط؛ نجمع شحنتك مع شحنات أخرى في حاوية واحدة لتوفير التكلفة.</p>
-      </article>
-      <article class="service">
-        <svg class="service-icon" aria-hidden="true"><use href="#i-container"/></svg>
-        <h3>الحاويات الكاملة <span class="abbr" lang="en">FCL</span></h3>
-        <p>حاوية 20 أو 40 قدماً لبضاعتك وحدك، بأفضل أسعار النوالين وإدارة كاملة من الميناء إلى المستودع.</p>
-      </article>
-      <article class="service">
-        <svg class="service-icon" aria-hidden="true"><use href="#i-stamp"/></svg>
-        <h3>التخليص الجمركي</h3>
-        <p>فريق متخصص يتولى الإجراءات والمستندات والرسوم، لتصلك البضاعة مخلّصة وجاهزة دون تعقيد.</p>
-      </article>
+<!-- ================= Routes ================= -->
+<section class="routes" id="routes" aria-labelledby="routesTitle">
+  <div class="container">
+    <div class="routes-head">
+      <h2 id="routesTitle" class="section-title" data-split>خطوط الشحن إلى سوريا</h2>
+      <p data-anim="fade-up">اختر بلد الشحن لترى الخط وطرق الشحن المتاحة.</p>
+    </div>
+
+    <div class="routes-layout">
+      <div class="routes-tabs" role="tablist" aria-label="بلد الشحن">
+        <button class="route-tab is-active" role="tab" aria-selected="true" aria-controls="routePanel" data-route="tr">
+          <span class="route-tab-name">تركيا</span><span class="route-tab-sub">إسطنبول ومرسين وجميع المدن</span>
+        </button>
+        <button class="route-tab" role="tab" aria-selected="false" aria-controls="routePanel" data-route="ae" tabindex="-1">
+          <span class="route-tab-name">الإمارات</span><span class="route-tab-sub">دبي وأبوظبي والشارقة</span>
+        </button>
+        <button class="route-tab" role="tab" aria-selected="false" aria-controls="routePanel" data-route="cn" tabindex="-1">
+          <span class="route-tab-name">الصين</span><span class="route-tab-sub">جميع المدن والمصانع</span>
+        </button>
+        <button class="route-tab" role="tab" aria-selected="false" aria-controls="routePanel" data-route="gulf" tabindex="-1">
+          <span class="route-tab-name">دول الخليج</span><span class="route-tab-sub">السعودية والكويت وقطر والبحرين وعُمان</span>
+        </button>
+        <button class="route-tab" role="tab" aria-selected="false" aria-controls="routePanel" data-route="eu" tabindex="-1">
+          <span class="route-tab-name">أوروبا</span><span class="route-tab-sub">الدول الأوروبية كافة</span>
+        </button>
+      </div>
+
+      <div class="routes-stage">
+        <div class="routes-map" id="routesMap">
+          <canvas id="routesCanvas" aria-hidden="true"></canvas>
+          <svg class="routes-svg" id="routesSvg" viewBox="0 0 1300 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+        </div>
+        <div class="route-panel" id="routePanel" role="tabpanel" aria-live="polite">
+          <div class="route-panel-top">
+            <h3 id="rpTitle">تركيا ← سوريا</h3>
+            <ul class="modes" id="rpModes"></ul>
+          </div>
+          <p id="rpNote">الشحن البري يصل عادة خلال 5–10 أيام.</p>
+        </div>
+      </div>
+    </div>
+    <p class="routes-foot" data-anim="fade-up">بلدك غير موجود؟ <a class="js-whatsapp" href="#">راسلنا على واتساب</a> ونخبرك بأفضل طريق لشحنتك.</p>
+  </div>
+</section>
+
+<!-- ================= Process (pinned) ================= -->
+<section class="process" id="process" aria-labelledby="processTitle">
+  <div class="process-pin">
+    <div class="container process-inner">
+      <div class="process-head">
+        <h2 id="processTitle" class="section-title" data-split>كيف تصل شحنتك إليك</h2>
+        <p data-anim="fade-up">أربع محطات، وجهة واحدة مسؤولة عنها من البداية حتى النهاية.</p>
+      </div>
+
+      <div class="journey" aria-hidden="true">
+        <svg class="journey-svg" viewBox="0 0 1200 160" preserveAspectRatio="none">
+          <path class="journey-base" d="M1180 110 C 1000 110, 960 50, 800 50 S 560 110, 400 110 S 180 50, 20 50"/>
+          <path class="journey-fill" id="journeyFill" pathLength="1" d="M1180 110 C 1000 110, 960 50, 800 50 S 560 110, 400 110 S 180 50, 20 50"/>
+        </svg>
+        <div class="journey-truck" id="journeyTruck">
+          <svg viewBox="0 0 64 36"><rect class="c-gold" x="18" y="4" width="44" height="22" rx="2"/><path class="c-ivory" d="M2 26V14c0-4 3-7 7-7h8v19z"/><path class="c-night" d="M5 16v-4c0-2 1-3 3-3h6v7z"/><circle class="jt-wheel" cx="10" cy="29" r="5"/><circle class="jt-wheel" cx="48" cy="29" r="5"/></svg>
+        </div>
+      </div>
+
+      <ol class="stations">
+        <li class="station" data-station="0">
+          <span class="station-num" aria-hidden="true">1</span>
+          <h3>نستلم من المورّد</h3>
+          <p>نتواصل مع المورّد ونستلم البضاعة ونتحقق منها ونجهّزها للشحن.</p>
+        </li>
+        <li class="station" data-station="1">
+          <span class="station-num" aria-hidden="true">2</span>
+          <h3>نشحن بالطريقة الأنسب</h3>
+          <p>براً أو جواً أو بحراً، جزئياً أو بحاوية كاملة، حسب الكمية والموعد.</p>
+        </li>
+        <li class="station" data-station="2">
+          <span class="station-num" aria-hidden="true">3</span>
+          <h3>نخلّص جمركياً</h3>
+          <p>نجهّز المستندات وننهي الإجراءات والرسوم الجمركية نيابةً عنك.</p>
+        </li>
+        <li class="station" data-station="3">
+          <span class="station-num" aria-hidden="true">4</span>
+          <h3>نسلّم إلى عنوانك</h3>
+          <p>إلى محلك أو مستودعك في أي محافظة، مع تحديثات على واتساب في كل مرحلة.</p>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- ===== Routes ===== -->
-<section class="section section-white" id="routes" aria-labelledby="routesTitle">
-  <div class="container">
-    <header class="section-head">
-      <h2 id="routesTitle">خطوط الشحن إلى سوريا</h2>
-      <p>من أهم مراكز التجارة في المنطقة والعالم، مع خيارات الشحن المتاحة لكل خط.</p>
-    </header>
+<!-- ================= Statement + Why ================= -->
+<section class="why" id="why" aria-labelledby="whyTitle">
+  <div class="statement-pin">
+    <div class="container">
+      <p class="statement" id="statement">لأن بضاعتك تستحق شريكاً يهتم بها كأنها بضاعته: يعرف الطريق، ويتكلم لغة الجمارك، ويرد عليك حين تسأل.</p>
+    </div>
+  </div>
 
-    <ul class="route-list">
-      <li class="route-row">
-        <div class="route-origin">
-          <h3>تركيا</h3>
-          <p>إسطنبول ومرسين وجميع المدن التركية</p>
-        </div>
-        <ul class="modes" aria-label="طرق الشحن المتاحة">
-          <li><svg aria-hidden="true"><use href="#i-truck"/></svg>بري</li>
-          <li><svg aria-hidden="true"><use href="#i-plane"/></svg>جوي</li>
-          <li><svg aria-hidden="true"><use href="#i-ship"/></svg>بحري</li>
-        </ul>
-        <p class="route-note">الشحن البري يصل عادة خلال 5–10 أيام.</p>
+  <div class="container">
+    <h2 id="whyTitle" class="why-title" data-anim="fade-up">لماذا يختار التجار فري لاين</h2>
+    <ul class="why-grid">
+      <li class="why-card tilt">
+        <span class="why-icon"><svg aria-hidden="true"><use href="#i-bolt"/></svg></span>
+        <h3>مواعيد نلتزم بها</h3>
+        <p>جداول شحن ثابتة ومواعيد تسليم واضحة، لأن وقت التاجر رأس مال.</p>
       </li>
-      <li class="route-row">
-        <div class="route-origin">
-          <h3>الإمارات</h3>
-          <p>دبي وأبوظبي والشارقة</p>
-        </div>
-        <ul class="modes" aria-label="طرق الشحن المتاحة">
-          <li><svg aria-hidden="true"><use href="#i-truck"/></svg>بري</li>
-          <li><svg aria-hidden="true"><use href="#i-plane"/></svg>جوي</li>
-          <li><svg aria-hidden="true"><use href="#i-ship"/></svg>بحري</li>
-        </ul>
-        <p class="route-note">خطوط منتظمة بالطرق الثلاث.</p>
+      <li class="why-card tilt">
+        <span class="why-icon"><svg aria-hidden="true"><use href="#i-stamp"/></svg></span>
+        <h3>بضاعة مؤمَّنة</h3>
+        <p>تغليف وتحميل احترافي وتأمين على البضائع، لتصل شحنتك سليمة.</p>
       </li>
-      <li class="route-row">
-        <div class="route-origin">
-          <h3>الصين</h3>
-          <p>جميع المدن والمصانع الصينية</p>
-        </div>
-        <ul class="modes" aria-label="طرق الشحن المتاحة">
-          <li><svg aria-hidden="true"><use href="#i-plane"/></svg>جوي</li>
-          <li><svg aria-hidden="true"><use href="#i-ship"/></svg>بحري</li>
-        </ul>
-        <p class="route-note">الشحن البحري يستغرق نحو 30–45 يوماً.</p>
+      <li class="why-card tilt">
+        <span class="why-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></span>
+        <h3>متابعة مستمرة</h3>
+        <p>تحديثات أولاً بأول عن موقع شحنتك، وفريق دعم على مدار الساعة.</p>
       </li>
-      <li class="route-row">
-        <div class="route-origin">
-          <h3>دول الخليج</h3>
-          <p>السعودية والكويت وقطر والبحرين وعُمان</p>
-        </div>
-        <ul class="modes" aria-label="طرق الشحن المتاحة">
-          <li><svg aria-hidden="true"><use href="#i-truck"/></svg>بري</li>
-          <li><svg aria-hidden="true"><use href="#i-plane"/></svg>جوي</li>
-        </ul>
-        <p class="route-note">شحن سريع وموثوق من جميع دول المجلس.</p>
-      </li>
-      <li class="route-row">
-        <div class="route-origin">
-          <h3>أوروبا</h3>
-          <p>الدول الأوروبية كافة</p>
-        </div>
-        <ul class="modes" aria-label="طرق الشحن المتاحة">
-          <li><svg aria-hidden="true"><use href="#i-plane"/></svg>جوي</li>
-          <li><svg aria-hidden="true"><use href="#i-ship"/></svg>بحري</li>
-        </ul>
-        <p class="route-note">مع خدمة تخليص جمركي كاملة عند الوصول.</p>
+      <li class="why-card tilt">
+        <span class="why-icon"><svg aria-hidden="true"><use href="#i-doc"/></svg></span>
+        <h3>خبرة جمركية</h3>
+        <p>معرفة بالأنظمة والتعرفات توفّر عليك الوقت والرسوم الزائدة.</p>
       </li>
     </ul>
-    <p class="routes-foot">بلدك غير موجود في القائمة؟ <a class="js-whatsapp" href="#">راسلنا على واتساب</a> ونخبرك بأفضل طريق لشحنتك.</p>
   </div>
 </section>
 
-<!-- ===== Process + Why us ===== -->
-<section class="section section-forest" id="process" aria-labelledby="processTitle">
-  <div class="container">
-    <header class="section-head">
-      <h2 id="processTitle">كيف تصل شحنتك إليك</h2>
-      <p>أربع مراحل، وجهة واحدة مسؤولة عنها من البداية حتى النهاية.</p>
-    </header>
-
-    <div class="steps-wrap" id="stepsWrap">
-    <div class="steps-track" aria-hidden="true">
-      <span class="steps-progress"></span>
-      <svg class="steps-plane"><use href="#i-plane"/></svg>
-    </div>
-    <ol class="steps">
-      <li class="step">
-        <span class="step-num" aria-hidden="true">1</span>
-        <h3>نستلم من المورّد</h3>
-        <p>نتواصل مع المورّد ونستلم البضاعة ونتحقق منها ونجهّزها للشحن.</p>
-      </li>
-      <li class="step">
-        <span class="step-num" aria-hidden="true">2</span>
-        <h3>نشحن بالطريقة الأنسب</h3>
-        <p>براً أو جواً أو بحراً، جزئياً أو بحاوية كاملة، حسب الكمية والموعد.</p>
-      </li>
-      <li class="step">
-        <span class="step-num" aria-hidden="true">3</span>
-        <h3>نخلّص جمركياً</h3>
-        <p>نجهّز المستندات وننهي الإجراءات والرسوم الجمركية نيابةً عنك.</p>
-      </li>
-      <li class="step">
-        <span class="step-num" aria-hidden="true">4</span>
-        <h3>نسلّم إلى عنوانك</h3>
-        <p>توصيل إلى محلك أو مستودعك في أي محافظة سورية، مع تحديثات على واتساب في كل مرحلة.</p>
-      </li>
-    </ol>
-    </div>
-
-    <div class="why" aria-labelledby="whyTitle">
-      <h3 class="why-title" id="whyTitle">لماذا يختار التجار فري لاين</h3>
-      <ul class="why-list">
-        <li>
-          <svg aria-hidden="true"><use href="#i-bolt"/></svg>
-          <div><strong>مواعيد نلتزم بها</strong><span>جداول شحن ثابتة، لأن وقت التاجر رأس مال.</span></div>
-        </li>
-        <li>
-          <svg aria-hidden="true"><use href="#i-stamp"/></svg>
-          <div><strong>بضاعة مؤمَّنة</strong><span>تغليف وتحميل احترافي وتأمين على البضائع.</span></div>
-        </li>
-        <li>
-          <svg aria-hidden="true"><use href="#i-clock"/></svg>
-          <div><strong>متابعة مستمرة</strong><span>تحديثات أولاً بأول وفريق دعم على مدار الساعة.</span></div>
-        </li>
-        <li>
-          <svg aria-hidden="true"><use href="#i-doc"/></svg>
-          <div><strong>خبرة جمركية</strong><span>معرفة بالأنظمة والتعرفات توفّر عليك الوقت والرسوم الزائدة.</span></div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Quote form ===== -->
-<section class="section" id="quote" aria-labelledby="quoteTitle">
+<!-- ================= Quote ================= -->
+<section class="quote" id="quote" aria-labelledby="quoteTitle">
   <div class="container quote-inner">
-    <div class="quote-text">
-      <h2 id="quoteTitle">اطلب عرض سعر لشحنتك</h2>
-      <p>أرسل تفاصيل الشحنة وسنرد عليك بعرض سعر واضح عبر واتساب أو باتصال هاتفي، بدون أي التزام.</p>
-      <ul class="checks">
-        <li><svg aria-hidden="true"><use href="#i-check"/></svg>رد سريع خلال ساعات العمل</li>
-        <li><svg aria-hidden="true"><use href="#i-check"/></svg>أسعار شفافة بدون رسوم خفية</li>
-        <li><svg aria-hidden="true"><use href="#i-check"/></svg>استشارة جمركية مجانية</li>
-      </ul>
+    <div class="quote-main">
+      <h2 id="quoteTitle" class="section-title" data-split>اطلب عرض سعر خلال دقيقة</h2>
+      <p class="quote-lead" data-anim="fade-up">اكتب تفاصيل الشحنة وشاهد رسالتك تتجهّز مباشرة، ثم أرسلها لنا على واتساب بضغطة واحدة.</p>
+
+      <form class="quote-form" id="quoteForm" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <input type="text" id="qName" name="name" autocomplete="name" placeholder=" " required aria-describedby="qNameErr">
+            <label for="qName">الاسم الكامل <b aria-hidden="true">*</b></label>
+            <p class="field-error" id="qNameErr" data-msg="اكتب اسمك لنعرف بمن نتواصل."></p>
+          </div>
+          <div class="field">
+            <input type="tel" id="qPhone" name="phone" autocomplete="tel" inputmode="tel" placeholder=" " dir="ltr" required aria-describedby="qPhoneErr">
+            <label for="qPhone">رقم الهاتف مع رمز الدولة <b aria-hidden="true">*</b></label>
+            <p class="field-error" id="qPhoneErr" data-msg="اكتب رقماً صحيحاً مع رمز الدولة، مثل ‎+963 944 123 456."></p>
+          </div>
+          <div class="field field-wide">
+            <select id="qCountry" name="country" required aria-describedby="qCountryErr">
+              <option value="" selected disabled hidden></option>
+              <option>تركيا</option>
+              <option>الإمارات</option>
+              <option>الصين</option>
+              <option>السعودية</option>
+              <option>الكويت</option>
+              <option>قطر</option>
+              <option>البحرين</option>
+              <option>عُمان</option>
+              <option>أوروبا</option>
+              <option>بلد آخر</option>
+            </select>
+            <label for="qCountry">بلد الشحن <b aria-hidden="true">*</b></label>
+            <p class="field-error" id="qCountryErr" data-msg="اختر البلد الذي ستُشحن منه البضاعة."></p>
+          </div>
+
+          <fieldset class="field-wide chips-field" id="qTypeGroup" aria-describedby="qTypeErr">
+            <legend>نوع الشحن <b aria-hidden="true">*</b></legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="type" value="شحن بري"><span><svg aria-hidden="true"><use href="#i-truck"/></svg>بري</span></label>
+              <label class="chip"><input type="radio" name="type" value="شحن جوي"><span><svg aria-hidden="true"><use href="#i-plane"/></svg>جوي</span></label>
+              <label class="chip"><input type="radio" name="type" value="شحن بحري - جزئي (LCL)"><span><svg aria-hidden="true"><use href="#i-box"/></svg>بحري جزئي</span></label>
+              <label class="chip"><input type="radio" name="type" value="شحن بحري - حاوية كاملة (FCL)"><span><svg aria-hidden="true"><use href="#i-container"/></svg>حاوية كاملة</span></label>
+              <label class="chip"><input type="radio" name="type" value="تخليص جمركي فقط"><span><svg aria-hidden="true"><use href="#i-stamp"/></svg>تخليص فقط</span></label>
+              <label class="chip"><input type="radio" name="type" value="غير متأكد - أحتاج استشارة"><span><svg aria-hidden="true"><use href="#i-doc"/></svg>أحتاج استشارة</span></label>
+            </div>
+            <p class="field-error" id="qTypeErr" data-msg="اختر نوع الشحن، أو «أحتاج استشارة» إن لم تكن متأكداً."></p>
+          </fieldset>
+
+          <div class="field">
+            <input type="text" id="qVolume" name="volume" inputmode="decimal" placeholder=" ">
+            <label for="qVolume">الحجم التقريبي (م³)</label>
+          </div>
+          <div class="field">
+            <input type="text" id="qWeight" name="weight" inputmode="decimal" placeholder=" ">
+            <label for="qWeight">الوزن التقريبي (كغ)</label>
+          </div>
+          <div class="field field-wide">
+            <textarea id="qNotes" name="notes" rows="3" placeholder=" "></textarea>
+            <label for="qNotes">نوع البضاعة ومدينة الاستلام وأي ملاحظات</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-wa btn-lg btn-block magnetic">
+          <svg aria-hidden="true"><use href="#i-wa"/></svg>
+          إرسال الطلب عبر واتساب
+        </button>
+        <p class="form-note" id="formNote" role="status">سيُفتح واتساب برسالتك جاهزة، وما عليك إلا الضغط على «إرسال».</p>
+      </form>
     </div>
 
-    <form class="quote-form" id="quoteForm" novalidate>
-      <div class="form-head">
-        <span class="form-head-title">بيانات الشحنة</span>
-        <span class="form-head-note">الحقول المعلّمة بـ <b aria-hidden="true">*</b> مطلوبة</span>
+    <div class="phone-col" aria-hidden="true">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="wa-head">
+          <span class="wa-avatar"><img src="images/emblem.webp" alt="" width="34" height="34" loading="lazy"></span>
+          <span class="wa-who"><b>فري لاين</b><small id="waStatus">متصل الآن</small></span>
+        </div>
+        <div class="wa-body">
+          <div class="wa-bubble wa-in">أهلاً بك في فري لاين 👋 أرسل لنا تفاصيل شحنتك ونرد عليك بعرض السعر.</div>
+          <div class="wa-bubble wa-out" id="waPreview"></div>
+          <div class="wa-typing" id="waTyping"><i></i><i></i><i></i></div>
+        </div>
+        <div class="wa-input"><span>اكتب رسالة</span><svg><use href="#i-wa"/></svg></div>
       </div>
-
-      <div class="form-grid">
-        <div class="field">
-          <label for="qName">الاسم الكامل <b aria-hidden="true">*</b></label>
-          <input type="text" id="qName" name="name" autocomplete="name" placeholder="مثال: أحمد الخطيب" required aria-describedby="qNameErr">
-          <p class="field-error" id="qNameErr" data-msg="اكتب اسمك لنعرف بمن نتواصل."></p>
-        </div>
-        <div class="field">
-          <label for="qPhone">رقم الهاتف مع رمز الدولة <b aria-hidden="true">*</b></label>
-          <input type="tel" id="qPhone" name="phone" autocomplete="tel" inputmode="tel" placeholder="+963 9XX XXX XXX" dir="ltr" required aria-describedby="qPhoneErr">
-          <p class="field-error" id="qPhoneErr" data-msg="اكتب رقماً صحيحاً مع رمز الدولة، مثل ‎+963 944 123 456."></p>
-        </div>
-        <div class="field">
-          <label for="qCountry">بلد الشحن <b aria-hidden="true">*</b></label>
-          <select id="qCountry" name="country" required aria-describedby="qCountryErr">
-            <option value="" selected disabled>اختر البلد</option>
-            <option>تركيا</option>
-            <option>الإمارات</option>
-            <option>الصين</option>
-            <option>السعودية</option>
-            <option>الكويت</option>
-            <option>قطر</option>
-            <option>البحرين</option>
-            <option>عُمان</option>
-            <option>أوروبا</option>
-            <option>بلد آخر</option>
-          </select>
-          <p class="field-error" id="qCountryErr" data-msg="اختر البلد الذي ستُشحن منه البضاعة."></p>
-        </div>
-        <div class="field">
-          <label for="qType">نوع الشحن <b aria-hidden="true">*</b></label>
-          <select id="qType" name="type" required aria-describedby="qTypeErr">
-            <option value="" selected disabled>اختر نوع الشحن</option>
-            <option>شحن بري</option>
-            <option>شحن جوي</option>
-            <option>شحن بحري - جزئي (LCL)</option>
-            <option>شحن بحري - حاوية كاملة (FCL)</option>
-            <option>تخليص جمركي فقط</option>
-            <option>غير متأكد - أحتاج استشارة</option>
-          </select>
-          <p class="field-error" id="qTypeErr" data-msg="اختر نوع الشحن، أو «غير متأكد» إن كنت تحتاج استشارة."></p>
-        </div>
-        <div class="field">
-          <label for="qVolume">الحجم التقريبي <span class="unit">(م³)</span></label>
-          <input type="text" id="qVolume" name="volume" inputmode="decimal" placeholder="مثال: 3">
-        </div>
-        <div class="field">
-          <label for="qWeight">الوزن التقريبي <span class="unit">(كغ)</span></label>
-          <input type="text" id="qWeight" name="weight" inputmode="decimal" placeholder="مثال: 500">
-        </div>
-        <div class="field field-wide">
-          <label for="qNotes">تفاصيل إضافية</label>
-          <textarea id="qNotes" name="notes" rows="3" placeholder="نوع البضاعة، مدينة الاستلام، أي ملاحظات..."></textarea>
-        </div>
-      </div>
-
-      <button type="submit" class="btn btn-wa btn-lg btn-block">
-        <svg aria-hidden="true"><use href="#i-wa"/></svg>
-        إرسال الطلب عبر واتساب
-      </button>
-      <p class="form-note" id="formNote" role="status">سيُفتح واتساب برسالة جاهزة تحتوي بيانات طلبك، وما عليك إلا الضغط على «إرسال».</p>
-    </form>
+      <p class="phone-caption">معاينة مباشرة لرسالتك</p>
+    </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="section section-white" id="faq" aria-labelledby="faqTitle">
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq" aria-labelledby="faqTitle">
   <div class="container faq-inner">
     <header class="faq-head">
-      <h2 id="faqTitle">أسئلة يطرحها التجار قبل الشحن</h2>
-      <p>لم تجد إجابة سؤالك؟</p>
-      <a class="btn btn-outline js-whatsapp" href="#">
+      <h2 id="faqTitle" class="section-title" data-split>أسئلة يطرحها التجار قبل الشحن</h2>
+      <p data-anim="fade-up">لم تجد إجابة سؤالك؟</p>
+      <a class="btn btn-outline js-whatsapp magnetic" href="#" data-anim="fade-up">
         <svg aria-hidden="true"><use href="#i-wa"/></svg>
         اسألنا مباشرة
       </a>
     </header>
 
     <div class="faq-list">
-      <details class="faq-item" name="faq">
+      <details class="faq-item">
         <summary>كم تستغرق مدة الشحن إلى سوريا؟</summary>
         <div class="faq-body"><p>تختلف المدة حسب نوع الشحن وبلد المنشأ: الشحن البري من تركيا يستغرق عادة 5–10 أيام، والشحن الجوي 3–7 أيام، أما الشحن البحري من الصين فيستغرق نحو 30–45 يوماً. نزوّدك بمدة دقيقة عند طلب عرض السعر.</p></div>
       </details>
-      <details class="faq-item" name="faq">
+      <details class="faq-item">
         <summary>ما الفرق بين الشحن الجزئي (LCL) والحاوية الكاملة (FCL)؟</summary>
         <div class="faq-body"><p>في الشحن الجزئي تُجمَع بضاعتك مع بضائع تجار آخرين في حاوية واحدة وتدفع حسب الحجم فقط، وهو الأنسب للكميات الصغيرة. أما الحاوية الكاملة فتُستأجر لبضاعتك وحدك، وهي أوفر وأسرع للكميات الكبيرة.</p></div>
       </details>
-      <details class="faq-item" name="faq">
+      <details class="faq-item">
         <summary>هل تشمل خدمتكم التخليص الجمركي والتوصيل حتى باب المستودع؟</summary>
         <div class="faq-body"><p>نعم. نقدم خدمة متكاملة من الباب للباب: استلام البضاعة من المورّد، ثم الشحن، ثم التخليص الجمركي بالكامل، ثم التوصيل إلى عنوانك في أي محافظة سورية.</p></div>
       </details>
-      <details class="faq-item" name="faq">
+      <details class="faq-item">
         <summary>كيف تُحسب تكلفة الشحن؟</summary>
         <div class="faq-body"><p>تعتمد التكلفة على نوع الشحن، والوزن أو الحجم (أيهما أكبر حسب المعادلة المعتمدة)، ونوع البضاعة، وبلد المنشأ. أرسل تفاصيل شحنتك عبر نموذج عرض السعر وسنوافيك بتسعيرة دقيقة وشفافة.</p></div>
       </details>
-      <details class="faq-item" name="faq">
+      <details class="faq-item">
         <summary>هل يمكنني متابعة شحنتي أثناء الطريق؟</summary>
         <div class="faq-body"><p>بالتأكيد. نرسل لك تحديثات دورية عن حالة شحنتك في كل مرحلة، من الاستلام حتى التسليم، عبر واتساب، ويمكنك التواصل مع فريق المتابعة في أي وقت.</p></div>
       </details>
-      <details class="faq-item" name="faq">
+      <details class="faq-item">
         <summary>هل تشحنون البضائع التجارية والشخصية؟</summary>
         <div class="faq-body"><p>نعم، نشحن البضائع التجارية بأنواعها (أقمشة، إلكترونيات، قطع غيار، مواد بناء، أدوات منزلية وغيرها) إضافة إلى الشحنات الشخصية والأمتعة، مع مراعاة الأنظمة الجمركية لكل صنف.</p></div>
       </details>
-      <details class="faq-item" name="faq">
+      <details class="faq-item">
         <summary>ما المستندات المطلوبة للشحن والتخليص؟</summary>
         <div class="faq-body"><p>عادةً نحتاج الفاتورة التجارية وقائمة التعبئة (Packing List) وبيانات المرسل والمستلم. فريقنا يرشدك خطوة بخطوة ويجهّز باقي المستندات الجمركية نيابةً عنك.</p></div>
       </details>
@@ -566,51 +623,120 @@
   </div>
 </section>
 
-<!-- ===== Contact ===== -->
-<section class="section section-deep" id="contact" aria-labelledby="contactTitle">
-  <div class="container">
-    <header class="section-head">
-      <h2 id="contactTitle">تحدّث مع فريقنا الآن</h2>
-      <p>نرد يومياً من 9 صباحاً حتى 9 مساءً، ورسائل واتساب نستقبلها على مدار الساعة.</p>
-    </header>
+<!-- ================= CTA + Contact ================= -->
+<section class="cta" id="contact" aria-labelledby="ctaTitle">
+  <div class="cta-iris" id="ctaIris">
+    <div class="container cta-inner">
+      <h2 id="ctaTitle" class="cta-title" data-split>شحنتك القادمة تبدأ برسالة</h2>
+      <p class="cta-sub" data-anim="fade-up">نرد يومياً من 9 صباحاً حتى 9 مساءً، ورسائل واتساب نستقبلها على مدار الساعة.</p>
 
-    <div class="contact-grid">
-      <a class="contact-item contact-item-wa js-whatsapp" href="#">
-        <svg class="contact-icon" aria-hidden="true"><use href="#i-wa"/></svg>
-        <span class="contact-label">واتساب</span>
-        <span class="contact-value js-phone-display" dir="ltr">+963 991 777 173</span>
-        <span class="contact-hint">ابدأ محادثة فورية</span>
-      </a>
-      <a class="contact-item js-phone-link" href="tel:+963991777173">
-        <svg class="contact-icon" aria-hidden="true"><use href="#i-phone"/></svg>
-        <span class="contact-label">اتصال هاتفي</span>
-        <span class="contact-value js-phone-display" dir="ltr">+963 991 777 173</span>
-        <span class="contact-hint">يومياً 9 ص – 9 م</span>
-      </a>
-      <div class="contact-item">
-        <svg class="contact-icon" aria-hidden="true"><use href="#i-pin"/></svg>
-        <span class="contact-label">مكاتبنا</span>
-        <span class="contact-value">سوريا، تركيا، الإمارات</span>
-        <span class="contact-hint">ووكلاء في بلدان الشحن الرئيسية</span>
+      <div class="contact-grid">
+        <a class="contact-item contact-item-wa js-whatsapp magnetic" href="#">
+          <svg class="contact-icon" aria-hidden="true"><use href="#i-wa"/></svg>
+          <span class="contact-label">واتساب</span>
+          <span class="contact-value js-phone-display" dir="ltr">+963 991 777 173</span>
+          <span class="contact-hint">ابدأ محادثة فورية</span>
+        </a>
+        <a class="contact-item js-phone-link magnetic" href="tel:+963991777173">
+          <svg class="contact-icon" aria-hidden="true"><use href="#i-phone"/></svg>
+          <span class="contact-label">اتصال هاتفي</span>
+          <span class="contact-value js-phone-display" dir="ltr">+963 991 777 173</span>
+          <span class="contact-hint">يومياً 9 ص – 9 م</span>
+        </a>
+        <div class="contact-item">
+          <svg class="contact-icon" aria-hidden="true"><use href="#i-pin"/></svg>
+          <span class="contact-label">مكاتبنا</span>
+          <span class="contact-value">سوريا، تركيا، الإمارات</span>
+          <span class="contact-hint">ووكلاء في بلدان الشحن الرئيسية</span>
+        </div>
       </div>
+    </div>
+
+    <!-- cargo motion scene -->
+    <div class="cargo-scene" aria-hidden="true">
+      <svg viewBox="0 0 1440 190" preserveAspectRatio="xMidYMax slice">
+        <defs>
+          <linearGradient id="trail" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <clipPath id="craneClip"><rect x="1100" y="44" width="340" height="146"/></clipPath>
+          <g id="sc-container">
+            <rect width="120" height="44" rx="2"/>
+            <path class="ribs" d="M12 5V39M24 5V39M36 5V39M48 5V39M60 5V39M72 5V39M84 5V39M96 5V39M108 5V39"/>
+          </g>
+        </defs>
+        <g class="sc-line">
+          <path d="M40 176V112L160 80L280 112V176"/>
+          <path d="M96 176V132H224V176"/>
+          <path d="M96 144H224M96 156H224M96 168H224"/>
+        </g>
+        <path class="sc-ground" d="M0 176H1440"/>
+        <path class="sc-road" d="M0 186H1440"/>
+        <g>
+          <use href="#sc-container" x="1300" y="132" class="sc-c-gold"/>
+          <use href="#sc-container" x="1300" y="88" class="sc-c-light"/>
+          <use href="#sc-container" x="1180" y="132" class="sc-c-forest"/>
+        </g>
+        <g class="sc-line">
+          <path d="M1390 176V30M1414 176V30M1390 30H1414"/>
+          <path d="M1390 176L1414 150L1390 124L1414 98L1390 72L1414 46"/>
+          <path d="M1120 36H1430M1120 46H1430"/>
+          <path d="M1402 30L1360 4M1402 30L1440 12"/>
+        </g>
+        <g clip-path="url(#craneClip)">
+          <g class="sc-lift">
+            <path class="sc-cable" d="M1206 -40V94M1226 -40V94"/>
+            <use href="#sc-container" x="1156" y="94" class="sc-c-gold"/>
+          </g>
+        </g>
+        <rect class="sc-trolley" x="1196" y="40" width="40" height="10" rx="2"/>
+        <g class="sc-truck">
+          <g class="sc-truck-body">
+            <rect class="sc-chassis" x="6" y="-20" width="206" height="6" rx="2"/>
+            <use href="#sc-container" x="48" y="-68" class="sc-c-gold"/>
+            <rect class="sc-c-forest" x="170" y="-68" width="40" height="44" rx="2"/>
+            <path class="sc-cab" d="M4 -16V-44C4 -54 10 -60 20 -60H42V-16Z"/>
+            <path class="sc-window" d="M10 -52H34V-38H8C8 -46 8 -50 10 -52Z"/>
+            <rect class="sc-light" x="2" y="-26" width="5" height="5" rx="1"/>
+          </g>
+          <g transform="translate(24 -8)"><g class="sc-wheel"><circle r="10"/><path d="M-6 0H6M0 -6V6"/></g></g>
+          <g transform="translate(160 -8)"><g class="sc-wheel"><circle r="10"/><path d="M-6 0H6M0 -6V6"/></g></g>
+          <g transform="translate(186 -8)"><g class="sc-wheel"><circle r="10"/><path d="M-6 0H6M0 -6V6"/></g></g>
+        </g>
+        <g class="sc-plane">
+          <g class="sc-plane-body">
+            <path class="sc-trail" d="M214 30H520"/>
+            <path class="sc-wing-far" d="M96 24L128 24L152 6L140 6Z"/>
+            <path class="sc-fuselage" d="M0 32C0 24 9 20 26 19L172 17L196 0H212L205 21L214 25V31C188 39 60 41 24 40C9 39 0 37 0 32Z"/>
+            <path class="sc-fin" d="M196 0H212L205 21H186Z"/>
+            <path class="sc-stripe" d="M24 33L200 29"/>
+            <path class="sc-cockpit" d="M9 27L19 23.5L24 27.5L12 30Z"/>
+            <rect class="sc-door" x="58" y="21" width="30" height="13" rx="2"/>
+            <path class="sc-wing" d="M92 31H128L156 60H141Z"/>
+            <rect class="sc-engine" x="108" y="40" width="28" height="10" rx="5"/>
+            <path class="sc-fin" d="M186 24H206L218 33H207Z"/>
+          </g>
+        </g>
+      </svg>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ===== Footer ===== -->
+<!-- ================= Footer ================= -->
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
       <a href="#top" class="brand brand-footer" aria-label="فري لاين — العودة للأعلى">
-        <span class="brand-tile"><img class="brand-mark" src="images/emblem.webp" alt="" width="44" height="44" loading="lazy"></span>
+        <span class="brand-tile"><img class="brand-mark" src="images/emblem.webp" alt="" width="40" height="40" loading="lazy"></span>
         <span class="brand-text">
           <span class="brand-name">فري لاين</span>
           <span class="brand-latin" lang="en" dir="ltr">FREE LINE</span>
         </span>
       </a>
-      <p>شركة فري لاين للشحن والتخليص الجمركي — نقل بضائعك من أسواق العالم إلى سوريا.</p>
+      <p>شركة فري لاين للشحن والتخليص الجمركي. نقل بضائعك من أسواق العالم إلى سوريا.</p>
     </div>
     <nav class="footer-nav" aria-label="روابط الموقع">
       <a href="#services">خدماتنا</a>
@@ -621,16 +747,22 @@
       <a href="#contact">تواصل معنا</a>
     </nav>
   </div>
+  <div class="footer-giant" aria-hidden="true" lang="en" dir="ltr"><span>FREE</span><span>LINE</span></div>
   <div class="footer-bottom">
     <p>© <span id="year">2026</span> فري لاين للشحن والتخليص الجمركي. جميع الحقوق محفوظة.</p>
   </div>
 </footer>
 
-<!-- Floating WhatsApp -->
 <a class="wa-float js-whatsapp" href="#" aria-label="تواصل عبر واتساب">
   <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  <span class="wa-float-tip">راسلنا الآن</span>
 </a>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js" defer></script>
+<script src="js/geo-data.js" defer></script>
+<script src="js/globe.js" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>
