@@ -121,6 +121,104 @@
     document.querySelectorAll('.map-svg animateMotion').forEach(function (a) { a.remove(); });
   }
 
+  /* ---------- Load choreography ---------- */
+  window.requestAnimationFrame(function () {
+    document.documentElement.classList.add('is-loaded');
+  });
+
+  /* ---------- Hero depth: pointer + scroll parallax ---------- */
+  var finePointer = window.matchMedia('(pointer: fine) and (min-width: 1081px)');
+
+  if (hero && !reducedMotion) {
+    var heroVisible = true;
+    var depthTick = false;
+    var pointer = { x: 0, y: 0 };
+
+    function applyDepth() {
+      depthTick = false;
+      if (!heroVisible) return;
+      hero.style.setProperty('--sy', Math.min(window.scrollY, 900).toFixed(1));
+      hero.style.setProperty('--dx', pointer.x.toFixed(3));
+      hero.style.setProperty('--dy', pointer.y.toFixed(3));
+    }
+
+    function requestDepth() {
+      if (!depthTick) { depthTick = true; window.requestAnimationFrame(applyDepth); }
+    }
+
+    function syncDepthMode() {
+      /* touch screens and narrow layouts keep the hero still */
+      hero.classList.toggle('hero-depth', finePointer.matches);
+      if (!finePointer.matches) { pointer.x = pointer.y = 0; }
+      requestDepth();
+    }
+
+    hero.addEventListener('pointermove', function (e) {
+      if (!finePointer.matches) return;
+      var r = hero.getBoundingClientRect();
+      pointer.x = (e.clientX - r.left) / r.width - .5;
+      pointer.y = (e.clientY - r.top) / r.height - .5;
+      requestDepth();
+    });
+    hero.addEventListener('pointerleave', function () { pointer.x = pointer.y = 0; requestDepth(); });
+    window.addEventListener('scroll', requestDepth, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        hero.classList.toggle('hero-depth', heroVisible && finePointer.matches);
+      }).observe(hero);
+    }
+
+    finePointer.addEventListener('change', syncDepthMode);
+    syncDepthMode();
+  }
+
+  /* ---------- Process: scroll-scrubbed route line ---------- */
+  var stepsWrap = document.getElementById('stepsWrap');
+  var wideLayout = window.matchMedia('(min-width: 1081px)');
+
+  if (stepsWrap) {
+    var steps = stepsWrap.querySelectorAll('.step');
+    var track = stepsWrap.querySelector('.steps-track');
+    var scrubTick = false;
+
+    function scrub() {
+      scrubTick = false;
+      var r = stepsWrap.getBoundingClientRect();
+      var vh = window.innerHeight;
+      /* 0 when the steps enter the lower fifth of the screen, 1 by mid-screen */
+      var p = (vh * .82 - r.top) / (vh * .42);
+      p = Math.max(0, Math.min(1, p));
+      stepsWrap.style.setProperty('--p', p.toFixed(4));
+      stepsWrap.style.setProperty('--x', (p * track.offsetWidth).toFixed(1));
+      steps.forEach(function (step, i) {
+        step.classList.toggle('is-lit', p >= i / (steps.length - 1) - .02);
+      });
+    }
+
+    function requestScrub() {
+      if (!scrubTick) { scrubTick = true; window.requestAnimationFrame(scrub); }
+    }
+
+    function syncScrubMode() {
+      var on = wideLayout.matches;
+      stepsWrap.classList.toggle('is-scrub', on);
+      if (on) {
+        window.addEventListener('scroll', requestScrub, { passive: true });
+        window.addEventListener('resize', requestScrub);
+        scrub();
+      } else {
+        window.removeEventListener('scroll', requestScrub);
+        window.removeEventListener('resize', requestScrub);
+        steps.forEach(function (step) { step.classList.remove('is-lit'); });
+      }
+    }
+
+    wideLayout.addEventListener('change', syncScrubMode);
+    syncScrubMode();
+  }
+
   /* ---------- Quote form → WhatsApp ---------- */
   var form = document.getElementById('quoteForm');
   var formNote = document.getElementById('formNote');

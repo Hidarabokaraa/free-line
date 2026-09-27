@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
 
 <script type="application/ld+json">
 {
@@ -93,7 +94,7 @@
 <!-- ===== Hero ===== -->
 <section class="hero" id="top">
   <div class="container hero-inner">
-    <div class="hero-content">
+    <div class="hero-content" data-depth="4">
       <p class="hero-kicker">شحن وتخليص جمركي من الباب للباب</p>
       <h1>بضاعتك من أسواق العالم إلى سوريا، بخط واحد ومسؤولية واحدة</h1>
       <p class="hero-sub">نستلم من المورّد في تركيا أو الإمارات أو الصين أو الخليج أو أوروبا، نشحن براً أو جواً أو بحراً، نخلّص جمركياً، ونسلّم إلى عنوانك في أي محافظة.</p>
@@ -112,7 +113,7 @@
       </dl>
     </div>
 
-    <figure class="route-map" aria-labelledby="mapCaption">
+    <figure class="route-map" data-depth="2" aria-labelledby="mapCaption">
       <svg class="map-svg" viewBox="0 0 640 440" role="img" aria-labelledby="mapTitle">
         <title id="mapTitle">خريطة خطوط الشحن من أوروبا وتركيا والصين والخليج والإمارات إلى سوريا</title>
         <defs>
@@ -179,7 +180,7 @@
 
   <!-- Motion scene: port crane → truck on the road → warehouse, cargo plane overhead.
        Everything faces left: the direction of reading and of delivery. -->
-  <div class="cargo-scene" aria-hidden="true">
+  <div class="cargo-scene" data-depth="5" aria-hidden="true">
     <svg viewBox="0 0 1440 190" preserveAspectRatio="xMidYMax slice">
       <defs>
         <linearGradient id="trail" x1="0" x2="1" y1="0" y2="0">
@@ -382,6 +383,11 @@
       <p>أربع مراحل، وجهة واحدة مسؤولة عنها من البداية حتى النهاية.</p>
     </header>
 
+    <div class="steps-wrap" id="stepsWrap">
+    <div class="steps-track" aria-hidden="true">
+      <span class="steps-progress"></span>
+      <svg class="steps-plane"><use href="#i-plane"/></svg>
+    </div>
     <ol class="steps">
       <li class="step">
         <span class="step-num" aria-hidden="true">1</span>
@@ -404,6 +410,7 @@
         <p>توصيل إلى محلك أو مستودعك في أي محافظة سورية، مع تحديثات على واتساب في كل مرحلة.</p>
       </li>
     </ol>
+    </div>
 
     <div class="why" aria-labelledby="whyTitle">
       <h3 class="why-title" id="whyTitle">لماذا يختار التجار فري لاين</h3>

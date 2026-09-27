@@ -491,6 +491,27 @@ p { text-wrap: pretty; }
   95%, 100% { translate: 0 0; }
 }
 
+/* ---------- Load choreography + depth ---------- */
+.js .hero-content > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+.js .route-map { opacity: 0; transform: scale(.97); transition: opacity .9s ease .1s, transform .9s cubic-bezier(.2, .7, .2, 1) .1s; }
+
+.is-loaded .hero-content > * { opacity: 1; transform: none; }
+.is-loaded .route-map { opacity: 1; transform: none; }
+.is-loaded .hero-content > :nth-child(2) { transition-delay: .08s; }
+.is-loaded .hero-content > :nth-child(3) { transition-delay: .16s; }
+.is-loaded .hero-content > :nth-child(4) { transition-delay: .24s; }
+.is-loaded .hero-content > :nth-child(5) { transition-delay: .32s; }
+
+/* depth layers read --dx/--dy (pointer) and --sy (scroll) set in JS */
+.hero-depth [data-depth] { will-change: transform; }
+.hero-depth .hero-content { translate: calc(var(--dx, 0) * -4px) calc(var(--sy, 0) * .22px + var(--dy, 0) * -3px); }
+.hero-depth .route-map    { translate: calc(var(--dx, 0) * 12px) calc(var(--sy, 0) * .1px + var(--dy, 0) * 9px); }
+.hero-depth .cargo-scene  { translate: 0 calc(var(--sy, 0) * -.08px); }
+
 /* ---------- Sections ---------- */
 .section { padding: 104px 0; }
 .section-white { background: var(--white); }
@@ -626,14 +647,44 @@ p { text-wrap: pretty; }
   position: relative;
 }
 
-.steps::before {
-  content: '';
+.steps-wrap { position: relative; --p: 0; }
+
+/* scroll-scrubbed route line: fills right→left as the section scrolls in,
+   a small plane rides its tip and lights each step it passes */
+.steps-track {
   position: absolute;
   top: 23px;
-  inset-inline: 24px 24px;
-  height: 1px;
-  background: repeating-linear-gradient(to left, rgba(224, 188, 106, .7) 0 8px, transparent 8px 16px);
+  inset-inline: 24px;
+  height: 2px;
+  background: repeating-linear-gradient(to left, rgba(224, 188, 106, .45) 0 8px, transparent 8px 16px);
+  pointer-events: none;
 }
+
+.steps-progress {
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(var(--p));
+  transform-origin: right center;
+}
+
+.steps-plane {
+  position: absolute;
+  top: -15px;
+  right: -16px;
+  width: 32px;
+  height: 32px;
+  color: var(--gold);
+  transform: translateX(calc(var(--x, 0) * -1px)) rotate(-135deg);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+}
+
+.step .step-num { transition: background-color .35s ease, color .35s ease, box-shadow .35s ease; }
+.js .steps-wrap.is-scrub .step:not(.is-lit) .step-num { border-color: rgba(224, 188, 106, .45); color: rgba(224, 188, 106, .6); }
+.js .steps-wrap.is-scrub .step:not(.is-lit) h3,
+.js .steps-wrap.is-scrub .step:not(.is-lit) p { opacity: .55; }
+.step h3, .step p { transition: opacity .35s ease; }
+.step.is-lit .step-num { background: var(--gold); color: var(--deep); box-shadow: 0 0 0 6px rgba(224, 188, 106, .15); }
 
 .step { position: relative; }
 
@@ -653,7 +704,6 @@ p { text-wrap: pretty; }
   font-size: 1.15rem;
 }
 
-.step:last-child .step-num { background: var(--gold); color: var(--deep); }
 
 .step h3 { font-size: 1.15rem; margin-bottom: 8px; }
 .step p { color: rgba(255, 255, 255, .75); font-size: .98rem; }
@@ -1039,7 +1089,7 @@ a.contact-item:hover { border-color: var(--gold); background: rgba(255, 255, 255
   .service:nth-child(even) { padding-inline-end: 0; }
 
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 44px; }
-  .steps::before { display: none; }
+  .steps-track { display: none; }
   .why-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .quote-inner, .faq-inner { grid-template-columns: 1fr; gap: 40px; }
